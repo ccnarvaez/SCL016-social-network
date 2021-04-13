@@ -1,0 +1,16 @@
+  .userProfile::before {
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f2c1";
+    font-size: 40px; color: brown; display:flex; justify-content: center;
+  }
+  .homePage::before{
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f015";
+    font-size: 40px; display:flex; justify-content: center;   
+  }
+  .chatShortCut::before{
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f27a";
+    font-size: 40px; display:flex; justify-content:center;  
+  }
+
+  .bg-primary{
+      background-color: #082D2F !important;
+  }
