@@ -41,18 +41,3 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-
-/*Grid Practice*/
-.test {
-  float: left;
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-rows: repeat(2, 1fr);
-  text-align: center;
-  color: white;
-}
-
-.one {
-  background-color: turquoise;
-}
