@@ -8,14 +8,14 @@ const login = () => {
   collapseNewElement.className = 'collapse';// Asign class name
   collapseNewElement.setAttribute('id', 'navbarToggleExternalContent');
 
-  // Second, div class bg-dark p-4 (collapse's son)
+  // Second div, <div class="bg-dark p-4"> - collapse son
   const bgDarkNewElement = document.createElement('div');
   const bgDarkParent = collapseParent.lastElementChild;
   const bgDarkReference = bgDarkParent.child;
   bgDarkParent.insertBefore(bgDarkNewElement, bgDarkReference);
   bgDarkNewElement.className = 'bg-dark p-4';
 
-  //  bg-dark class's Son
+  //  bg-dark class's first son <h5 class="text-white h4">Collapsed content</h5>
   const h5NewElement = document.createElement('h5');
   const h5Parent = bgDarkParent.firstChild;
   const h5Element = h5Parent.child;
@@ -24,25 +24,28 @@ const login = () => {
   const h5Text = document.createTextNode('Collapsed content');
   h5NewElement.appendChild(h5Text);
 
+  // bg-dark class's second son <span class="text-muted">Toggleable via the navbar brand.</span>
   const spanNewElement = document.createElement('span');
   h5Parent.insertBefore(spanNewElement, h5Element);
   spanNewElement.className = 'text-muted';
   const spanText = document.createTextNode('Toggleable via the navbar brand.');
   spanNewElement.appendChild(spanText);
 
-  // Nav section
+  // Nav section <nav class="navbar navbar-dark bg-dark">
   const navNewElement = document.createElement('nav');
   collapseParent.insertBefore(navNewElement, collapseReference);
   navNewElement.className = 'navbar navbar-dark bg-dark';
 
-  // Nav's childs
+  // Nav's child  <div class="container-fluid">
   const navNewChild = document.createElement('div');
   const navParent = collapseParent.children[2];
   const navReference = navParent.child;
   navParent.insertBefore(navNewChild, navReference);
   navNewChild.className = 'container-fluid';
 
-  // Div Child
+  /* Div Child <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+  data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+  aria-expanded="false" aria-label="Toggle navigation"> */
   const divNewChild = document.createElement('button');
   const divParent = navParent.firstElementChild;
   const divReference = divParent.child;
@@ -53,17 +56,17 @@ const login = () => {
   divNewChild.setAttribute('data-bs-target', '#navbarToggleExternalContent');
   divNewChild.setAttribute('aria-controls', 'navbarToggleExternalContent');
   divNewChild.setAttribute('aria-expanded', 'false');
-
   divNewChild.setAttribute('aria-label', 'Toggle navigation');
   divNewChild.setAttribute('id', 'barButton');
 
-  // Button's child
+  // Button's child <span class="navbar-toggler-icon"></span>
   const buttonNewChild = document.createElement('span');
   const buttonParent = divParent.firstElementChild;
   const buttonReference = buttonParent.child;
   buttonParent.insertBefore(buttonNewChild, buttonReference);
   buttonNewChild.className = 'navbar-toggler-icon';
 
+  // 2. MENU CREATION
   // Bar menu
   const barMenu = document.createElement('div');
   const barMenuParent = document.body.children[1];

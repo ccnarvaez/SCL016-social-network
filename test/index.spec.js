@@ -6,3 +6,9 @@ describe('login', () => {
     expect(typeof login).toBe('function');
   });
 });
+
+describe('login render', () => {
+  it('should render without crashing', () => {
+    expect(login).not.toThrow('error');
+  });
+});
