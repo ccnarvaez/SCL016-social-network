@@ -3,6 +3,13 @@
   background-color: #082D2F !important;
 }
 
+.barMenu {
+  display: none;
+  height: 300px;
+  background-color: #082D2F;
+  color: lightblue;
+}
+
 /*Fontawesome icons*/
 .userProfile::before {
   font-family: "Font Awesome 5 Free";
