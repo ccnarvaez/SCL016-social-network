@@ -37,21 +37,5 @@
   },
   "dependencies": {
     "firebase": "^8.4.1"
-<<<<<<< HEAD
-  },
-  "directories": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ccnarvaez/SCL016-social-network.git"
-  },
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/ccnarvaez/SCL016-social-network/issues"
-  },
-  "homepage": "https://github.com/ccnarvaez/SCL016-social-network#readme"
-=======
   }
->>>>>>> majolagos-proyectoMajo
 }
