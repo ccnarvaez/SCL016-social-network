@@ -1,11 +1,19 @@
 
-    const routes =()=>{    
+    const routes =()=>{ 
+        
+        
+
+
+
+
+//METODO 2
+        /* 
     let path = window.location.pathname;
     const inicio = document.getElementById("Inicio");
     const cursos = document.getElementById("Cursos");
     const servicios = document.getElementById("Servicios");
     const puntosLimpios = document.getElementById("Puntos Limpios");
-
+*/
 
 // inicio.addEventListener('click', e =>{
 //     history.pushState(null, "Inicio", "/inicio");
@@ -32,4 +40,4 @@
 
 
 
-export default {routes}
+export default routes
