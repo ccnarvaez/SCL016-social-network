@@ -44,8 +44,8 @@
                 <label for="txtPassword">Contraseña</label>
                 <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
               </div>
-              <button type="submit" class="btn btn-primary btn-block mb-3 mt-3">Iniciar sesión</button>
-
+              <button type="submit" class="btn btn-primary btn-block mb-3 mt-3" id ='signIn'>Iniciar sesión</button>
+              <button type="submit" class="btn btn-primary btn-block mb-3 mt-3" id ='signUp'>Sign Up</button>
             </div>
 
 
@@ -76,10 +76,26 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
   <!-- bootstrap -->
-  <!-- FIREBASE TAGS 
-  <script src="/__/firebase/8.4.1/firebase-app.js"></script>
-  <script src="/__/firebase/8.4.1/firebase-analytics.js"></script>
-  <script src="/__/firebase/init.js"></script>-->
+  <!-- FIREBASE TAGS -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+  
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBGl5Po8ETtzvvjXUnNxs8S74IPqcX8Ex8",
+      authDomain: "socialnetwork-7acb1.firebaseapp.com",
+      projectId: "socialnetwork-7acb1",
+      storageBucket: "socialnetwork-7acb1.appspot.com",
+      messagingSenderId: "945587091242",
+      appId: "1:945587091242:web:b4769bb4357561e64cd053"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+  </script>
+
+  </script>
 </body>
 
 </html>

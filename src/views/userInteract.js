@@ -41,6 +41,7 @@ const interaction = () => {
   const getButton1 = document.getElementById('sendComment');
   getButton1.addEventListener('click', () => {
   const inputText1 = document.getElementById('commentHere').value;
+  inputText2= document.getElementsByClassName;
   console.log(inputText1);  
   });
 };

@@ -1,6 +1,6 @@
-  //general nav
-    const nav = document.createElement("nav"); //create nav
-    nav.className = "navbar navbar-expand-lg navbar-dark bg-dark-green" //bootstrap class
+  //1. Navigation bar, dynamic creation
+    const nav = document.createElement("nav"); //create element nav
+    nav.className = "navbar navbar-expand-lg navbar-dark bg-dark-green" //add bootstrap class
 
     const buttonCollapse = document.createElement("button"); //create button collapse menu
     buttonCollapse.className = "navbar-toggler";
@@ -32,6 +32,8 @@
     ul.className = "navbar-nav mr-auto mt-2 mt-lg-0"; //add bootstrap class
 
     divList.appendChild(ul) //add element to divList
+
+    // 2. Section routes
 
     const arrayLi = ['Inicio', 'Cursos', 'Servicios', 'Puntos Limpios', 'Cerrar Sesión'];
 

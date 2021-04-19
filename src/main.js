@@ -5,19 +5,14 @@
 import {
     myFunction
 } from './components/index.js';
-// import config from './components/config.js';
-import login from './views/login.js';
-<<<<<<< HEAD
-import interaction from './views/userInteract.js';
-
-myFunction();
-login();
-interaction();
-=======
-// import login2 from './views/login2.js';
 import routes from './components/routes.js'
 import navbar from './views/navbar.js';
+import login from './views/login.js';
 
+
+
+
+login();
 //identificar la ruta... dependiendo de eso cargo la vista
 
 const header = document.querySelector("header");
@@ -53,4 +48,3 @@ switch (window.location.hash) {
 myFunction();
 // login();
 routes();
->>>>>>> b2aaaec122520bffdb9cdac0e955cbaf9ebb1848
