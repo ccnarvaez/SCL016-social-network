@@ -42,9 +42,8 @@
         const anchorLi = document.createElement("a"); //create anchor for li
         anchorLi.className = "nav-link";
         anchorLi.textContent = item;
-         anchorLi.setAttribute("href", `#/${item}`); //ruta con hash
+        anchorLi.setAttribute("href", `#/${item}`); //route with hash
         li.appendChild(anchorLi);
-
         ul.appendChild(li); //add li to ul
     });
 

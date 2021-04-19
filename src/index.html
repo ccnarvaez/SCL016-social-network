@@ -25,7 +25,7 @@
 
         </div>
         <div class="col-8">
-          <form class="mt-5">
+          <form class="mt-5" id="loginForm">
             <div class="container">
               <img class="card-img-top border mx-auto d-block img-fluid img-login" src="/img/loginUser.png"
                 alt="Card image cap">
@@ -39,12 +39,13 @@
                 <label for="txtEmail">Email</label>
                 <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp"
                   placeholder="Ingresa tu email">
+
               </div>
               <div class="form-group">
                 <label for="txtPassword">Contraseña</label>
                 <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
               </div>
-              <button type="submit" class="btn btn-primary btn-block mb-3 mt-3">Iniciar sesión</button>
+              <button type="submit" id="btnLogin" class="btn btn-primary btn-block mb-3 mt-3">Iniciar sesión</button>
 
             </div>
 
@@ -75,11 +76,31 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
+
   <!-- bootstrap -->
-  <!-- FIREBASE TAGS 
-  <script src="/__/firebase/8.4.1/firebase-app.js"></script>
-  <script src="/__/firebase/8.4.1/firebase-analytics.js"></script>
-  <script src="/__/firebase/init.js"></script>-->
+  <!-- FIREBASE TAGS -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBemdMN3xCYrifUqy2zJaB8rRsbik0CjOM",
+      authDomain: "socialnetwork2-6cb1b.firebaseapp.com",
+      projectId: "socialnetwork2-6cb1b",
+      storageBucket: "socialnetwork2-6cb1b.appspot.com",
+      messagingSenderId: "277665687670",
+      appId: "1:277665687670:web:56b26fc0f8a86461e29757"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+  </script>
 </body>
 
 </html>
