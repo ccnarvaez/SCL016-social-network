@@ -8,6 +8,8 @@ const login = () => {
   collapseNewElement.className = 'collapse';// Asign class name
   collapseNewElement.setAttribute('id', 'navbarToggleExternalContent');
 
+  console.log(collapseParent);
+
   // Second div, <div class="bg-dark p-4"> - collapse son
   const bgDarkNewElement = document.createElement('div');
   const bgDarkParent = collapseParent.lastElementChild;
@@ -34,7 +36,7 @@ const login = () => {
   // Nav section <nav class="navbar navbar-dark bg-dark">
   const navNewElement = document.createElement('nav');
   collapseParent.insertBefore(navNewElement, collapseReference);
-  navNewElement.className = 'navbar navbar-dark bg-dark';
+  navNewElement.className = 'navbar navbar-dark bg-dark-green';
 
   // Nav's child  <div class="container-fluid">
   const navNewChild = document.createElement('div');

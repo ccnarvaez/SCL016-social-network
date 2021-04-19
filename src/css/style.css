@@ -1,6 +1,15 @@
 /*Bootstrap navigation bar*/
-.bg-primary {
-  background-color: #082D2F !important;
+.bg-dark-green {
+  background-color: #082D2F;
+}
+
+.btn-primary {
+  background-color: #389DA3 !important;
+  border-color: #389DA3 !important;
+}
+
+.img-login {
+  width: 11rem;
 }
 
 .barMenu {

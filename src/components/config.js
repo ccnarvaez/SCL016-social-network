@@ -7,4 +7,5 @@ const firebaseConfig = {
   appId: '1:945587091242:web:b4769bb4357561e64cd053',
 };
 
+
 export default firebaseConfig;
