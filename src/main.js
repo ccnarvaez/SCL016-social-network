@@ -2,14 +2,6 @@
 // identificar la url en la que estoy y cargar el nav que corresponda... usar nav como un componente aparte
 //aca se arma la vista dinamica!
 
-import {
-    myFunction
-} from './components/index.js';
-// import firebaseConfig from './components/config.js';
-// import firebase from '/firebase'
-//  firebase.initializeApp(firebaseConfig);
-// import login from './views/login.js';
-
 import register from './components/register.js'
 import routes from './components/routes.js'
 import navbar from './views/navbar.js';
