@@ -1,4 +1,5 @@
 import navbar from './navbar.js';
+import navLogin from './navLogin.js';
 
 // Aqui iria todo
 
@@ -9,7 +10,7 @@ const barTemplate = () => {
     const header = document.querySelector('header');
     const main = document.querySelector('main');
     const nav = navbar;
-    header.appendChild(nav);
+    header.appendChild(navLogin);
 
     const testNav = document.createElement('h1');
     testNav.textContent = 'Hola!';
@@ -29,6 +30,4 @@ const barTemplate = () => {
         }
     });
 }
-
-
 export default barTemplate

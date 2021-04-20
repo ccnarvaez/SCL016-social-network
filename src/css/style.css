@@ -12,6 +12,11 @@
   width: 11rem;
 }
 
+.img-logo-login {
+  width: 150px;
+  height: 150px;
+}
+
 .barMenu {
   display: none;
   height: 300px;
