@@ -4,12 +4,14 @@ import routes from './components/routes.js'
 import navbar from './views/navbar.js';
 import barTemplate from './views/template.js';
 
+/*
 // Firebase callback function (register)
 const btnLogin = document.getElementById('btnLogin');
 btnLogin.addEventListener('click', ()=>{
 const test = register();
 });
 
+*/
 window.addEventListener('hashchange', () =>{
 
 switch (window.location.hash){

@@ -12,11 +12,31 @@
   width: 11rem;
 }
 
+.img-logo-login {
+  width: 150px;
+  height: 150px;
+}
+
 .barMenu {
   display: none;
   height: 300px;
   background-color: #082D2F;
   color: lightblue;
+}
+
+/*Footer*/
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: #E5E5E5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footerMessage {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 /*Fontawesome icons*/
@@ -50,10 +70,26 @@
   justify-content: center;
 }
 
-/*Footer*/
-footer {
-  width: 100%;
-  background-color: #E5E5E5;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+@media only screen and (max-width: 480px) {
+  .userProfile::before {
+    font-size: 20px;
+  }
+
+  .homePage::before {
+    font-size: 20px;
+  }
+
+  .chatShortCut::before {
+    font-size: 20px;
+  }
+
+  footer {
+    height: 50px;
+  }
+
+  .footerMessage {
+    font-size: 14px;
+  }
+
 }
