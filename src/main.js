@@ -1,8 +1,12 @@
 
 import register from './components/register.js'
 // import routes from './components/routes.js'
-// import navbar from './views/navbar.js';
-import barTemplate from './views/template.js';
+import login from './views/login.js'
+
+
+const body = document.querySelector('body');
+    const login2 = login;
+    body.appendChild(login2);
 
 
 // window.addEventListener('hashchange', () =>{
@@ -35,11 +39,10 @@ import barTemplate from './views/template.js';
 
 // Callback function
 // routes();
-barTemplate();
 
 // Firebase callback function (register)
-const btnRegister = document.getElementById('btnRegister');
-btnRegister.addEventListener('click', ()=>{
-const test = register();
-});
+// const btnRegister = document.getElementById('btnRegister');
+// btnRegister.addEventListener('click', ()=>{
+// const test = register();
+// });
 

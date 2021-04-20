@@ -15,7 +15,7 @@ const register = () => {
     // Sign in
     let user = userCredential.user;
     console.log("Registro exitoso.");
-    
+    console.log(user);
     registerForm.reset();
   })
   .catch((error) => {
