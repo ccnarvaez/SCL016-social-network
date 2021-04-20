@@ -1,11 +1,6 @@
 
     const routes =()=>{ 
-        
-        
-
-
-
-
+     
 //METODO 2
         /* 
     let path = window.location.pathname;
