@@ -1,3 +1,4 @@
+function modal (){
 const divModal = /* html */
     `
 <div class="modal fade modal-dialog-centered modal-dialog-scrollable" id="registerModal" data-backdrop="static"
@@ -31,5 +32,7 @@ const divModal = /* html */
     </div>
   </div>
 </div>
-    `
-export default divModal;
+ `
+
+ }
+export default modal;

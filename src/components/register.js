@@ -1,7 +1,7 @@
 const register = () => {
   // Getting user data
-  const email = document.getElementById('txtEmail').value;
-  const password = document.getElementById('txtPassword').value;
+  const email = document.getElementById('txtEmailRegister').value;
+  const password = document.getElementById('txtPasswordRegister').value;
 
   // Creating event
   const loginForm = document.getElementById('loginForm');
@@ -24,7 +24,10 @@ const register = () => {
     let errorMessage = error.message;
     console.log(errorCode);
     console.log(errorMessage);
-  });
+
+   
+   });
+    
 
   return true 
 

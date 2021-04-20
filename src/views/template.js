@@ -39,13 +39,13 @@ const barTemplate = () => {
 
     // Show on login footer
     const logFooter = document.getElementById('btnLogin');
-    logFooter.addEventListener('click', () => {
-    createDiv1.classList = 'userProfile';
-    createDiv2.classList = 'homePage';
-    createDiv3.classList = 'chatShortCut';
-    createDiv4.textContent='';
-    createDiv5.textContent='';
-    })
+    //logFooter.addEventListener('click', () => {
+    //createDiv1.classList = 'userProfile';
+    //createDiv2.classList = 'homePage';
+    //createDiv3.classList = 'chatShortCut';
+    //createDiv4.textContent='';
+    //createDiv5.textContent='';
+    //})
     
     // Routes nav menu
     window.addEventListener('hashchange', () => {

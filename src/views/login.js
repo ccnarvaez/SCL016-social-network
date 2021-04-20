@@ -1,7 +1,9 @@
+
+
 //login
- 
+ function login(){
      const container = document.getElementById('container');
-     const divModal = /*Html*/
+     const divModal = /* html */
       `<div class="container" id="container">
       <div class="row">
         <div class="col-2">
@@ -43,7 +45,8 @@
     </div>`
     
     
-container.Html = divModal;
+//container.innerHTML= divModal;
 
-    
-export default divModal;
+}  
+//export default divModal;
+export default login;
