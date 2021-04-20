@@ -1,5 +1,6 @@
-  //1. Nav Login
+//1. Nav Login
     // Create element nav and addition bootstrap class
+
     const navLogin = document.createElement('nav'); 
     navLogin.className = 'navbar navbar-dark bg-dark-green justify-content-center';
     
@@ -12,5 +13,4 @@
     anchorNav.appendChild(imgLogo);
     navLogin.appendChild(anchorNav);
 
-      export default navLogin;
- 
+  export default navLogin ;

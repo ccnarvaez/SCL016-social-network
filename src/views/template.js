@@ -1,5 +1,5 @@
 import navbar from './navbar.js';
-import navLogin from './navLogin.js';
+//import navLogin from './navLogin.js';
 import login from './login.js';
 
 //Navigation bar template

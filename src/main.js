@@ -3,15 +3,11 @@ import register from './components/register.js'
 // import routes from './components/routes.js'
 // import navbar from './views/navbar.js';
 import barTemplate from './views/template.js';
-import login from './views/login.js';
-import modal from './views/registerModal.js';
-import nav from './views/navbar.js';
+import variable from './views/TestLogin.js';
+import uno from './views/unaprueba.js';
 
-// Callback function
-barTemplate();
-register();
-login();
-modal();
+console.log(variable);
+console.log(uno);
 
 
 // window.addEventListener('hashchange', () =>{
@@ -51,4 +47,3 @@ const btnRegister = document.getElementById('btnRegister');
 btnRegister.addEventListener('click', ()=>{
 const test = register();
 });
-
