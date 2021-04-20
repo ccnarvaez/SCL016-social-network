@@ -4,8 +4,8 @@ const register = () => {
   const password = document.getElementById('txtPasswordRegister').value;
 
   // Creating event
-  const loginForm = document.getElementById('loginForm');
-  loginForm.addEventListener('submit', (e) => {
+  const registerForm = document.getElementById('registerForm');
+  registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
     });
   
@@ -14,9 +14,9 @@ const register = () => {
   .then(userCredential => {
     // Sign in
     let user = userCredential.user;
-    console.log(user);
-    console.log(userCredential);
-    loginForm.reset();
+    console.log("Registro exitoso.");
+    
+    registerForm.reset();
   })
   .catch((error) => {
     // Bad login messages

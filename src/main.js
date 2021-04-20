@@ -1,6 +1,6 @@
 
 import register from './components/register.js'
-//import routes from './components/routes.js'
+// import routes from './components/routes.js'
 // import navbar from './views/navbar.js';
 import barTemplate from './views/template.js';
 import login from './views/login.js';
@@ -13,32 +13,20 @@ register();
 login();
 modal();
 
-// Firebase callback function (register)
-const btnLogin = document.getElementById('btnLogin');
-btnLogin.addEventListener('click', ()=>{
-const test = register();
-});
 
-/*
-// Firebase callback function (register)
-const btnLogin = document.getElementById('btnLogin');
-btnLogin.addEventListener('click', ()=>{
-const test = register();
-      });
-*/
-window.addEventListener('hashchange', () =>{
+// window.addEventListener('hashchange', () =>{
 
-switch (window.location.hash){
-    case '#/Inicio':
-        console.log('1');
-        main.appendChild(prueba);
-        break;
+// switch (window.location.hash){
+//     case '#/Inicio':
+//         console.log('1');
+//         main.appendChild(prueba);
+//         break;
 
-    case '#/Cursos':
-        console.log('2');
-        break;
+//     case '#/Cursos':
+//         console.log('2');
+//         break;
 
-}
+// }
 
 // switch (window.location.pathname){
 //     case "/inicio":
@@ -52,8 +40,15 @@ switch (window.location.hash){
 
 // }
 
+// });
+
+// Callback function
+// routes();
+barTemplate();
+
+// Firebase callback function (register)
+const btnRegister = document.getElementById('btnRegister');
+btnRegister.addEventListener('click', ()=>{
+const test = register();
 });
-
-
-
 
