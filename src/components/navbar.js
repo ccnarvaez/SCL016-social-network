@@ -47,7 +47,7 @@
         const anchorLi = document.createElement('a'); //create anchor for li
         anchorLi.className = 'nav-link';
         anchorLi.textContent = item;
-        anchorLi.setAttribute('href', `#/${item}`); //route with hashtag
+        // anchorLi.setAttribute('href', `#/${item}`); //route with hashtag
         li.appendChild(anchorLi);
         ul.appendChild(li); //add li to ul
     });

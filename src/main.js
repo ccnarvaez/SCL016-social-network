@@ -1,6 +1,6 @@
 
 import firebase from './components/firebase.js'
-// import routes from './components/routes.js'
+import routes from './components/router.js'
 import login from './views/login.js'
 
 //Default
@@ -8,16 +8,13 @@ import login from './views/login.js'
     body.appendChild(login);
 // Firebase callback functions
 //Register
-
 const btnRegister = document.getElementById('btnRegister');
-
 btnRegister.addEventListener('click', ()=>{
 
 let email = document.getElementById('txtEmailRegister').value;
 let password = document.getElementById('txtPasswordRegister').value;
 const test = firebase.register(email, password);
 });
-
 //Login
 const btnLogin = document.getElementById('btnLogin');
 btnLogin.addEventListener('click', ()=>{
@@ -25,34 +22,19 @@ btnLogin.addEventListener('click', ()=>{
 let email = document.getElementById('txtEmail').value;
 let password = document.getElementById('txtPassword').value;
 let loginStatus = firebase.login(email, password);
-
+console.log(loginStatus + ' loginStatus');
 if (loginStatus){
 
-    window.location.replace = '/inicio';
+routes.assignRoute();
+routes.assignView(window.location.pathname);
 
-    switch (window.location.pathname){
-        case '/inicio':
-            console.log('inicio');
-            body.remove; 
-            const h1 = document.createElement('h1');
-            h1.textContent = 'HOLA';
-            body.appendChild(h1)
-            break;
-        case "/cursos":
-            console.log("cursos");
-            break;
-        case "/servicios":
-            console.log("servicios");
-            break;
-    }
+    
 }else{
-    //mensaje de error o algo y luego
-    //login
+   console.log("no hay conexion de usuario");
+
 }
 
 });
-
-
 firebase.observer();
 
 // window.addEventListener('hashchange', () =>{
@@ -72,4 +54,3 @@ firebase.observer();
 // });
 
 // Callback function
-// routes();
