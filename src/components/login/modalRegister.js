@@ -17,7 +17,6 @@ const modalRegister =  /* html */
               <label for="txtEmail">Email</label>
               <input type="email" class="form-control" id="txtEmailRegister" aria-describedby="emailHelp"
                 placeholder="Ingresa tu email">
-
             </div>
             <div class="form-group">
               <label for="txtEmail">Contraseña</label>

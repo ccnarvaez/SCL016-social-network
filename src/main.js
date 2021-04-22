@@ -1,12 +1,14 @@
-// import register from './components/register.js'
+import register from './components/register.js'
 // import routes from './components/routes.js'
 import login from './views/login.js'
-
+//import config from './components/config.js'
 
 const body = document.querySelector('body');
     const login2 = login;
     body.appendChild(login2);
 
+// Callback function
+register();
 
 // window.addEventListener('hashchange', () =>{
 
