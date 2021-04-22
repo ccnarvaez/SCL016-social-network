@@ -1,4 +1,3 @@
-
 import firebase from './components/firebase.js'
 import routes from './components/router.js'
 import login from './views/login.js'
