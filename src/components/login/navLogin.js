@@ -4,6 +4,7 @@
     const navLogin = document.createElement('nav'); 
     navLogin.className = 'navbar navbar-dark bg-dark-green justify-content-center';
     
+    
     const anchorNav = document.createElement('a');
     anchorNav.className = 'navbar-brand';
 

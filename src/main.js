@@ -3,6 +3,8 @@ import firebase from './components/firebase.js'
 // import routes from './components/routes.js'
 import login from './views/login.js'
 
+
+
 //Default
     const body = document.querySelector('body');
     body.appendChild(login);
@@ -36,10 +38,10 @@ if (loginStatus){
             body.remove; 
             const h1 = document.createElement('h1');
             h1.textContent = 'HOLA';
-            body.appendChild(h1)
+            body.appendChild(h1);
             break;
-        case "/cursos":
-            console.log("cursos");
+        case '/cursos':
+            console.log('cursos');
             break;
         case "/servicios":
             console.log("servicios");

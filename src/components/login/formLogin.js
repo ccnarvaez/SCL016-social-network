@@ -1,3 +1,4 @@
+const functionForm = () =>{
 const formLogin = /* html */
 `
 <div class="container" id="container">
@@ -39,5 +40,6 @@ const formLogin = /* html */
         </div>
       </div>
 `
-
-export default formLogin
+return formLogin
+};
+export default functionForm

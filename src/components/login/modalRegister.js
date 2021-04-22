@@ -1,3 +1,4 @@
+const modalFunction = () =>{
 const modalRegister =  /* html */
 ` <div class="modal fade modal-dialog-centered modal-dialog-scrollable" id="registerModal" data-backdrop="static"
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -31,5 +32,6 @@ const modalRegister =  /* html */
   </div>
 </div>
 </div>`
-
-export default modalRegister
+return modalRegister
+}
+export default modalFunction
