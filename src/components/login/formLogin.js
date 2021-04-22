@@ -28,11 +28,11 @@ const formLogin = /* html */
 
             </div>
 
-
-          </form>
-          <small class="text-muted float-right mb-5"><a href="" data-toggle="modal"
+            <small class="float-right mb-5"><a href="" data-toggle="modal"
               data-target="#registerModal">Registrarse.</a>
           </small>
+          </form>
+          
         </div>
         <div class="col-2">
 

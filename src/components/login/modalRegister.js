@@ -1,6 +1,6 @@
 const modalRegister =  /* html */
 ` <div class="modal fade modal-dialog-centered modal-dialog-scrollable" id="registerModal" data-backdrop="static"
-    data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -22,10 +22,11 @@ const modalRegister =  /* html */
               <label for="txtEmail">Contraseña</label>
               <input type="password" class="form-control" id="txtPasswordRegister" placeholder="Contraseña">
             </div>
-            <button type="submit" id="btnRegister" class="btn btn-primary btn-block mb-3 mt-3">Registarme</button>
+            <button type="submit" id="btnRegister" class="btn btn-primary btn-block mb-3 mt-3">Registrarme</button>
           </div>
         </form>
       </div>
+      
     </div>
   </div>
 </div>
