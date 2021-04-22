@@ -1,4 +1,5 @@
      // Footer messages
+const footerFunction = () => {
      const footer = document.createElement('footer');
      footer.className = 'footer';
 
@@ -12,5 +13,7 @@
      section2.className = 'footerMessage';
      section2.textContent='Reciclamos porque amamos al planeta';
 
+   return footer 
+}
 
-    export default footer;
+    export default footerFunction;
