@@ -16,6 +16,8 @@ const addNote = () => {
                 <textarea id="task-description" rows="3" class="form-control"></textarea>
               </div>
               <button class= "btn btn-primary" id= "btn-task-form">send</button>
+               <button class= "btn btn-info" id= "btn-task-info">send</button>
+                <button class= "btn btn-warning" id= "btn-task-warning">send</button>
             </form>
           </div>
         </div>
