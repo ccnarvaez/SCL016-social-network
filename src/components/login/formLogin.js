@@ -1,6 +1,6 @@
-const functionForm = () =>{
-const formLogin = /* html */
-`
+const functionForm = () => {
+  const formLogin = /* html */
+    `
 <div class="container" id="container">
       <div class="row">
         <div class="col-2">
@@ -26,20 +26,19 @@ const formLogin = /* html */
                 <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
               </div>
               <button type="submit" id="btnLogin" class="btn btn-primary btn-block mb-3 mt-3">Ingresar</button>
-
             </div>
-
             <small class="float-right mb-5"><a href="" data-toggle="modal"
               data-target="#registerModal">Registrarse.</a>
           </small>
           </form>
-          
+
         </div>
         <div class="col-2">
 
         </div>
       </div>
+
 `
-return formLogin
+  return formLogin
 };
 export default functionForm

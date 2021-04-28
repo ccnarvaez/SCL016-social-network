@@ -16,6 +16,10 @@
 <body>
   <div id="root">
   </div>
+  <div id="test">
+  </div>
+
+
   <!--script tags section-->
   <script type="module" src="main.js"></script>
   <script src="https://kit.fontawesome.com/d35fa4494b.js" crossorigin="anonymous"></script>
@@ -32,21 +36,24 @@
   <!-- FIREBASE TAGS -->
   <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
 
   <script>
-   // Web app's Firebase configuration
+    // Web app's Firebase configuration
     var firebaseConfig = {
-      apiKey: "AIzaSyBemdMN3xCYrifUqy2zJaB8rRsbik0CjOM",
-      authDomain: "socialnetwork2-6cb1b.firebaseapp.com",
-      projectId: "socialnetwork2-6cb1b",
-      storageBucket: "socialnetwork2-6cb1b.appspot.com",
-      messagingSenderId: "277665687670",
-      appId: "1:277665687670:web:56b26fc0f8a86461e29757"
+      apiKey: "AIzaSyBGl5Po8ETtzvvjXUnNxs8S74IPqcX8Ex8",
+      authDomain: "socialnetwork-7acb1.firebaseapp.com",
+      projectId: "socialnetwork-7acb1",
+      storageBucket: "socialnetwork-7acb1.appspot.com",
+      messagingSenderId: "945587091242",
+      appId: "1:945587091242:web:b4769bb4357561e64cd053"
+
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
-  </script> 
+    const db = firebase.firestore();
+  </script>
 </body>
 
 </html>
