@@ -1,51 +1,91 @@
 import login from '../views/login.js';
-// import home from '../views/home.js';
+import home from '../views/home.js';
+import courses from '../views/courses.js';
+import services from '../views/services.js';
+import navbar from '../components/navbar.js';
+import firebase from './firebase.js'
 
-const routes = { 
+const assignView = (pathname) => {
 
-assignRoute: () => {
+  const app = document.getElementById('root');
+  const divContentDelete = document.getElementById('divContent'); //div de contenido a reemplazar
+  if (divContentDelete) {
+    divContentDelete.remove()
+  }
+  const divContainerDelete = document.getElementById('divContainer2'); //divContainer2 de contenido a reemplazar
+  if (divContainerDelete) {
+    divContainerDelete.remove()
+  }
+  const divContainer = document.createElement('div');
+  divContainer.id = 'divContainer2'; //contiene menu general
+  const nav = navbar;
+  const header = document.createElement('header');
+  header.appendChild(nav);
+  divContainer.appendChild(header);
+  app.appendChild(divContainer);
+  assignRoute();
+  showViews(pathname, divContainer);
+}
+const assignRoute = () => {
+  let path = "";
+  const inicio = document.getElementById("Inicio");
+  const cursos = document.getElementById("Cursos");
+  const servicios = document.getElementById("Servicios");
+  const puntosLimpios = document.getElementById("Puntos Limpios");
+  const signOut = document.getElementById('Cerrar Sesión')
 
-    let path = window.location.pathname;
-    const inicio = document.getElementById("Inicio");
-    const cursos = document.getElementById("Cursos");
-    const servicios = document.getElementById("Servicios");
-    const puntosLimpios = document.getElementById("Puntos Limpios");
-    
-inicio.addEventListener('click', e =>{
-    history.pushState(null, "Inicio", "/inicio");
-});
+  signOut.addEventListener('click', () => {
+    firebase.signOut();
+    history.replaceState(null, 'login', '/');
+    path = window.location.pathname;
+    // assignView(path); revisar
+  })
 
-cursos.addEventListener('click', e =>{
-    history.pushState(null, "Cursos", "/cursos");
-});
+  inicio.addEventListener('click', e => {
+    history.pushState(null, 'Inicio', '/inicio');
+    path = window.location.pathname;
+    assignView(path);
+  });
 
-servicios.addEventListener('click', e =>{
+  cursos.addEventListener('click', e => {
+    history.pushState(null, 'Cursos', '/cursos');
+    path = window.location.pathname;
+    assignView(path)
+  });
+
+  servicios.addEventListener('click', e => {
     history.pushState(null, "Servicios", "/servicios");
-});
+    path = window.location.pathname;
+    assignView(path);
+  });
 
-puntosLimpios.addEventListener('click', e =>{
+  puntosLimpios.addEventListener('click', e => {
     history.pushState(null, "Puntos Limpios", "/puntos-limpios");
-});
-
-
-},
-assignView:(pathname) => {
-    // window.location.replace = '/inicio';
-    const body = document.querySelector('body');
-    switch (pathname){
-        case '/':
-            body.appendChild(login)
-            break;
-        case "/inicio":
-            console.log("inicio");
-            break;
-        case "/servicios":
-            console.log("servicios");
-            break;
-
-    }
+    path = window.location.pathname;
+    assignView(path);
+  });
 }
 
-}
+const showViews = (pathname, divContainer) => {
 
-export default routes;
+  switch (pathname) {
+    case "/":
+      divContainer.appendChild(login());
+      break;
+    case '/inicio':
+      divContainer.appendChild(home()); //a divContainer q tiene el menu, le agrego el divContent que viene de home.js
+      break;
+    case '/cursos':
+      divContainer.appendChild(courses());
+      break;
+    case '/servicios':
+      console.log('servicios');
+      divContainer.appendChild(services());
+      break;
+    case '/puntos-limpios':
+      console.log('PUNTOS LIMPIOS');
+      break;
+
+  }
+}
+export default assignView;
