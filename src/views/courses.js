@@ -1,6 +1,11 @@
 import footerIcons from '../components/footerIcons.js'
 
-const courses= () => {
+const courses = () => {
+
+    // const nav = navbar;
+
+    // const header = document.createElement('header');
+    // header.appendChild(nav);
 
     const main = document.createElement('main');
     main.innerHTML = `<h1>hola, estos son los cursos</>`;
@@ -12,5 +17,6 @@ const courses= () => {
 
     return divContent;
 }
+
 
 export default courses;

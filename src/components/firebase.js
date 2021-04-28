@@ -1,6 +1,4 @@
-import nav from './navbar.js';
-
-
+import login from '../views/login.js';
 
 const firebaseAuth = {
 
@@ -39,6 +37,7 @@ const firebaseAuth = {
   login: (email, password) => {
 
     const loginForm = document.getElementById('loginForm');
+
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
     });
@@ -46,37 +45,36 @@ const firebaseAuth = {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in
-        let user = userCredential.user;
+        // let user = userCredential.user;
         console.log('Ingreso correcto');
-        console.log(user);
         loginForm.reset();
+
+        const divContainer = document.getElementById('divContainer')
+        divContainer.remove(); //quito el login
+        localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
       })
       .catch((error) => {
         let errorCode = error.code;
         let errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
-        loginStatus = false;
+        localStorage.setItem('loginStatus', false); //guardo la loginstatus en localstorage
       });
 
+    let loginStatus = localStorage.getItem('loginStatus');
+    return loginStatus;
 
   },
 
   observer: () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-
-        console.log('usuario activo');
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
-        let uid = user.uid;
-
-
-        const header = document.createElement('header');
-        header.appendChild(nav);
-
-
         // ...
+        console.log('usuario logueado');
+
+
       } else {
         console.log('no hay usuario activo');
       }
@@ -109,4 +107,12 @@ const verification = () => {
     console.log(error);
   });
 }
+
+// const viewHome = (user) => {
+// let status = user.emailVerified
+
+// return status;
+
+// }
+
 export default firebaseAuth;
