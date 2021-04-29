@@ -30,6 +30,7 @@ footer {
   height: 100px;
   background-color: #E5E5E5;
   display: grid;
+  float: left;
   grid-template-columns: repeat(3, 1fr);
 }
 
