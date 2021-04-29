@@ -4,9 +4,8 @@ import courses from '../views/courses.js';
 import services from '../views/services.js';
 import navbar from '../components/navbar.js';
 import firebase from './firebase.js'
-
+//hash
 const assignView = (pathname) => {
-
   const app = document.getElementById('root');
   const divContentDelete = document.getElementById('divContent'); //div de contenido a reemplazar
   if (divContentDelete) {
@@ -27,19 +26,19 @@ const assignView = (pathname) => {
   showViews(pathname, divContainer);
 }
 const assignRoute = () => {
-  let path = "";
-  const inicio = document.getElementById("Inicio");
-  const cursos = document.getElementById("Cursos");
-  const servicios = document.getElementById("Servicios");
-  const puntosLimpios = document.getElementById("Puntos Limpios");
-  const signOut = document.getElementById('Cerrar Sesión')
+  let path = '';
+  const inicio = document.getElementById('Inicio');
+  const cursos = document.getElementById('Cursos');
+  const servicios = document.getElementById('Servicios');
+  const puntosLimpios = document.getElementById('Puntos Limpios');
+  const signOut = document.getElementById('Cerrar Sesión');
 
   signOut.addEventListener('click', () => {
     firebase.signOut();
     history.replaceState(null, 'login', '/');
     path = window.location.pathname;
     // assignView(path); revisar
-  })
+  });
 
   inicio.addEventListener('click', e => {
     history.pushState(null, 'Inicio', '/inicio');
@@ -54,22 +53,21 @@ const assignRoute = () => {
   });
 
   servicios.addEventListener('click', e => {
-    history.pushState(null, "Servicios", "/servicios");
+    history.pushState(null, 'Servicios', '/servicios');
     path = window.location.pathname;
     assignView(path);
   });
 
   puntosLimpios.addEventListener('click', e => {
-    history.pushState(null, "Puntos Limpios", "/puntos-limpios");
+    history.pushState(null, 'Puntos Limpios', '/puntos-limpios');
     path = window.location.pathname;
     assignView(path);
   });
 }
-
 const showViews = (pathname, divContainer) => {
 
   switch (pathname) {
-    case "/":
+    case '/':
       divContainer.appendChild(login());
       break;
     case '/inicio':

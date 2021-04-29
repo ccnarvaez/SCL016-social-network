@@ -11,7 +11,6 @@ app.appendChild(login());
 //Register
 // const btnRegister = document.getElementById('btnRegister');
 // btnRegister.addEventListener('click', () => {
-
 //     let email = document.getElementById('txtEmailRegister').value;
 //     let password = document.getElementById('txtPasswordRegister').value;
 //     firebase.register(email, password);
@@ -28,6 +27,13 @@ btnLogin.addEventListener('click', () => {
     history.pushState(null, "Inicio", "/inicio");
     assignView(window.location.pathname)
 
+    const getTask = () => db.collection('home').get();
+
+    window.addEventListener('DOMContentLoaded', async (e) => {
+      const task = await getTask();
+      console.log(task);
+    })
+
     // Interactions: writing button
     const writeBtn = document.getElementById('btn-task-form');
     writeBtn.addEventListener('click', async (e) => {
@@ -35,12 +41,13 @@ btnLogin.addEventListener('click', () => {
       e.preventDefault();
       const title = taskForm["task-title"].value;
       const description = taskForm["task-description"].value;
-      console.log(title, description);
       // Aca deberia crear una funcit
       const response = await db.collection('home').doc().set({
         title,
         description
       });
+
+      taskForm.reset(); // Nuevo
 
     });
   }

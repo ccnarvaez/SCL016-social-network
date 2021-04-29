@@ -1,8 +1,8 @@
 // Here you find form template to add some notes
 
 const addNote = () => {
-    const addNoteTemplate = /* html */
-        `
+  const addNoteTemplate = /* html */
+    `
   <div id= "writingNote" class="container p-4">
     <div class="row">
       <div class="col-md-4 offset-md-d-4">
@@ -16,6 +16,8 @@ const addNote = () => {
                 <textarea id="task-description" rows="3" class="form-control"></textarea>
               </div>
               <button class= "btn btn-primary" id= "btn-task-form">send</button>
+              <button class= "btn btn-warning" id= "btn-task-form1">editar</button>
+              <button class= "btn btn-danger" id= "btn-task-form2">eliminar</button>
             </form>
           </div>
         </div>
@@ -24,6 +26,6 @@ const addNote = () => {
   </div>
 
 `
-    return addNoteTemplate
+  return addNoteTemplate
 };
 export default addNote
