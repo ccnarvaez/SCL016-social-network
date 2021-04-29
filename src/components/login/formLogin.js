@@ -10,7 +10,7 @@ const functionForm = () => {
             <div class="container">
               <img class="card-img-top border mx-auto d-block img-fluid img-login" src="/img/loginUser.png"
                 alt="Card image cap">
-              <button type="button" class="btn btn-primary btn-block mt-3">Iniciar sesión <img src="/img/google.png"
+              <button type="button" class="btn btn-primary btn-block mt-3" id="btn-google">Iniciar sesión <img src="/img/google.png"
                   alt=""></button>
 
             </div>
