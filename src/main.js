@@ -1,4 +1,5 @@
 import firebase from './components/firebase.js'
+import firestore from './components/firestore.js'
 import assignView from './components/router.js'
 import login from './views/login.js'
 
@@ -26,23 +27,20 @@ btnLogin.addEventListener('click', () => {
   let loginStatus = firebase.login(email, password);
   if (loginStatus) {
     history.pushState(null, "Inicio", "/inicio");
-    assignView(window.location.pathname)
+    assignView(window.location.pathname);
+    firestore();
+  }
+});
+  // login google
+ const btnGoogle = document.getElementById('btn-google');
+   btnGoogle.addEventListener('click', () => {
+    let loginStatus = firebase.loginGoogle();
+    console.log(loginStatus);
+      if (loginStatus) {
+       history.pushState(null, "Inicio", "/inicio");
+          assignView(window.location.pathname);
+          firestore();
 
-    // Interactions: writing button
-    const writeBtn = document.getElementById('btn-task-form');
-    writeBtn.addEventListener('click', async (e) => {
-      const taskForm = document.getElementById('task-form');
-      e.preventDefault();
-      const title = taskForm["task-title"].value;
-      const description = taskForm["task-description"].value;
-      console.log(title, description);
-      // Aca deberia crear una funcit
-      const response = await db.collection('home').doc().set({
-        title,
-        description
-      });
-
-    });
   }
 
 });
