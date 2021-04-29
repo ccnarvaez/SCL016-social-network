@@ -12,7 +12,6 @@ const courses = () => {
     let footer = footerIcons;
     let divContent = document.createElement('divContent');
     divContent.id = 'divContent';
-
     divContent.appendChild(main);
     divContent.appendChild(footer);
 

@@ -2,6 +2,8 @@ import login from '../views/login.js';
 
 const firebaseAuth = {
 
+
+  
   register: (email, password) => {
     // Creating event
     const registerForm = document.getElementById('registerForm');
@@ -64,6 +66,22 @@ const firebaseAuth = {
     let loginStatus = localStorage.getItem('loginStatus');
     return loginStatus;
 
+  },
+
+  // Login google
+  loginGoogle: () =>{  
+      const provider = new firebase.auth.GoogleAuthProvider()
+      firebase.auth().signInWithRedirect(provider).then((userCredential) => {
+        // Signed in
+        // let user = userCredential.user;
+        console.log('Ingreso correcto');
+
+        const divContainer = document.getElementById('divContainer')
+        divContainer.remove(); //quito el login
+        localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
+      })
+        .catch(console.log)
+  
   },
 
   observer: () => {
