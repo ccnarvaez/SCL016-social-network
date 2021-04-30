@@ -1,18 +1,17 @@
-import firebase from './components/firebase.js'
-import firestore from './components/firestore.js'
-import assignView from './components/router.js'
-import login from './views/login.js'
+// Este es el punto de entrada de tu aplicacion
+import router from './lib/router.js'
+import firebase from './lib/firebase.js'
+import firestore from './lib/firestore.js'
 
-//Default
-const app = document.getElementById('root');
-app.appendChild(login());
+router(window.location.hash);
+window.addEventListener('hashchange', () => {
+  router(window.location.hash);
 
-// Firebase callback functions
+});
 
 //Register
 // const btnRegister = document.getElementById('btnRegister');
 // btnRegister.addEventListener('click', () => {
-
 //     let email = document.getElementById('txtEmailRegister').value;
 //     let password = document.getElementById('txtPasswordRegister').value;
 //     firebase.register(email, password);
@@ -20,47 +19,49 @@ app.appendChild(login());
 
 //Login
 const btnLogin = document.getElementById('btnLogin');
-btnLogin.addEventListener('click', () => {
+if (btnLogin !== null) {
+  btnLogin.addEventListener('click', () => {
 
-  let email = document.getElementById('txtEmail').value;
-  let password = document.getElementById('txtPassword').value;
-  let loginStatus = firebase.login(email, password);
-  if (loginStatus) {
-    history.pushState(null, "Inicio", "/inicio");
-    assignView(window.location.pathname);
-    firestore();
-  }
-});
-  // login google
- const btnGoogle = document.getElementById('btn-google');
-   btnGoogle.addEventListener('click', () => {
-    let loginStatus = firebase.loginGoogle();
-    console.log(loginStatus);
-      if (loginStatus) {
-       history.pushState(null, "Inicio", "/inicio");
-          assignView(window.location.pathname);
-          firestore();
+    let email = document.getElementById('txtEmail').value;
+    let password = document.getElementById('txtPassword').value;
+    firebase.login(email, password);
+    let loginStatus = firebase.observer();
 
-  }
+    if (loginStatus) {
+      history.replaceState(null, "Inicio", "/#/Inicio");
+      router(window.location.hash);
+      firestore();
+    }
+  });
+}
 
-});
+// login google
+const btnGoogle = document.getElementById('btn-google');
+if (btnGoogle !== null) {
+  btnGoogle.addEventListener('click', () => {
+    console.log(2);
+    firebase.loginGoogle();
+    console.log(3);
+    let loginStatus = firebase.observer();
+    console.log(4);
+    if (loginStatus) {
+      history.replaceState(null, "Inicio", "/#/Inicio");
+      router(window.location.hash);
+      firestore();
+
+    }
+
+  });
+}
+//SignOut
+
+const btnSignOut = document.getElementById('Cerrar Sesión');
+if (btnSignOut !== null) {
+  btnSignOut.addEventListener('click', () => {
+    firebase.signOut();
+    router(window.location.hash);
+  });
+}
+
 
 firebase.observer();
-
-// window.addEventListener('hashchange', () =>{
-
-// switch (window.location.hash){
-//     case '#/Inicio':
-//         console.log('1');
-//         main.appendChild(prueba);
-//         break;
-
-//     case '#/Cursos':
-//         console.log('2');
-//         break;
-
-// }
-
-// });
-
-// Callback function
