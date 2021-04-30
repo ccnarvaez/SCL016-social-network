@@ -1,6 +1,6 @@
-import firebase from './components/firebase.js'
-import firestore from './components/firestore.js'
-import assignView from './components/router.js'
+import firebase from './lib/firebase.js'
+import firestore from './lib/firestore.js'
+import assignView from './lib/router.js'
 import login from './views/login.js'
 
 //Default
