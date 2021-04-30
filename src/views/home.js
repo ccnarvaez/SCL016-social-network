@@ -1,4 +1,4 @@
-import footerIcons from '../components/footerIcons.js'
+import footerIcons from '../components/footer.js'
 import addNotes from '../components/interactions/addNotes.js'
 
 const home = () => {

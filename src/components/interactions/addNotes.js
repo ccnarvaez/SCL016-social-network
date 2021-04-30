@@ -1,8 +1,6 @@
-// Here you find form template to add some notes
-
 const addNote = () => {
-    const addNoteTemplate = /* html */
-        `
+  const addNoteTemplate = /* html */
+    `
   <div id= "writingNote" class="container p-4">
     <div class="row">
       <div class="col-md-4 offset-md-d-4">
@@ -28,6 +26,6 @@ const addNote = () => {
   </div>
 
 `
-    return addNoteTemplate
+  return addNoteTemplate
 };
 export default addNote

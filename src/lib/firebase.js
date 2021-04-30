@@ -1,9 +1,5 @@
-import login from '../views/login.js';
-
 const firebaseAuth = {
 
-
-  
   register: (email, password) => {
     // Creating event
     const registerForm = document.getElementById('registerForm');
@@ -51,37 +47,33 @@ const firebaseAuth = {
         console.log('Ingreso correcto');
         loginForm.reset();
 
-        const divContainer = document.getElementById('divContainer')
-        divContainer.remove(); //quito el login
-        localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
       })
       .catch((error) => {
         let errorCode = error.code;
         let errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
-        localStorage.setItem('loginStatus', false); //guardo la loginstatus en localstorage
       });
 
-    let loginStatus = localStorage.getItem('loginStatus');
-    return loginStatus;
 
   },
 
   // Login google
-  loginGoogle: () =>{  
-      const provider = new firebase.auth.GoogleAuthProvider()
-      firebase.auth().signInWithRedirect(provider).then((userCredential) => {
+  loginGoogle: () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    firebase.auth().signInWithRedirect(provider).then((userCredential) => {
         // Signed in
-        // let user = userCredential.user;
-        console.log('Ingreso correcto');
+        let user = firebase.auth().currentUser;
 
+        let name = user.displayName;
+        console.log(name);
+        console.log('Ingreso correcto');
         const divContainer = document.getElementById('divContainer')
         divContainer.remove(); //quito el login
-        localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
       })
-        .catch(console.log)
-  
+      .catch(console.log);
+
+
   },
 
   observer: () => {
@@ -91,19 +83,25 @@ const firebaseAuth = {
         // https://firebase.google.com/docs/reference/js/firebase.User
         // ...
         console.log('usuario logueado');
+        console.log(user.email);
 
+        localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
 
       } else {
         console.log('no hay usuario activo');
+        localStorage.setItem('loginStatus', false); //guardo la loginstatus en localstorage
+
       }
     });
-
+    let loginStatus = localStorage.getItem('loginStatus');
+    return loginStatus;
   },
 
   signOut: () => { //si se presiona boton cerrarSesion se ejecuta esta funcion.
     firebase.auth().signOut()
       .then(() => {
         ('cerrando la sesión...') //spinner
+
       })
       .catch((error) => {
 
