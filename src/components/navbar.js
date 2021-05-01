@@ -1,4 +1,5 @@
-  //1. Navigation bar, dynamic creation
+
+//1. Navigation bar, dynamic creation
   // Create element nav and addition bootstrap class
   const nav = document.createElement('nav');
   nav.className = 'navbar navbar-expand-lg navbar-dark bg-dark-green';
@@ -62,3 +63,6 @@
   nav.appendChild(divList);
 
   export default nav
+
+
+

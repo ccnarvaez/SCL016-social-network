@@ -17,7 +17,6 @@ const firebaseAuth = {
         registerForm.reset();
 
       }).then(() => {
-
         verification();
 
       })
@@ -27,7 +26,6 @@ const firebaseAuth = {
         let errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
-
       });
 
   },
@@ -65,7 +63,7 @@ const firebaseAuth = {
         // Signed in
         let user = firebase.auth().currentUser;
 
-        let name = user.displayName;
+        let name = user.displayName;       
         console.log(name);
         console.log('Ingreso correcto');
         const divContainer = document.getElementById('divContainer')
@@ -83,7 +81,7 @@ const firebaseAuth = {
         // https://firebase.google.com/docs/reference/js/firebase.User
         // ...
         console.log('usuario logueado');
-        console.log(user.email);
+        console.log(user.displayName);
 
         localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
 
