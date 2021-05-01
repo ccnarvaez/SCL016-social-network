@@ -16,6 +16,7 @@ const deleteMessage = (idDel) =>{
 
   // D1. Firebase method, delete: we want to take off some comments
   const deleteFirestore = id => db.collection('publication').doc(id).delete();
+
   deleteFirestore(idDel);
   cleaning();
 }
@@ -47,6 +48,19 @@ const showMessage = (doc) => {
     })
   }
 
+  // S5. Edit data
+  const getTask = id => db.collection('publication').doc(id).get();
+  const btnEdit = document.querySelectorAll('.btn-info');
+
+  for (let i = 0; i < btnEdit.length; i++) {
+    const btnSingle = btnEdit[i];
+    btnSingle.addEventListener('click', (e) => {
+      getTask(e.target.dataset.id);
+      console.log('senti');
+      
+    })
+  }
+
 
 }
 
@@ -68,17 +82,8 @@ const firestoreFunc = () => {
   cleaning();
 }
 
-const editMessage = () => {
-  // Edit data
-  const getTask = id => db.collection('publication').doc(id).get();
-  const btnEdit = document.querySelectorAll('.btn-info');
-
-  for (let i = 0; i < btnEdit.length; i++) {
-    const btnSingle = btnEdit[i];
-    btnSingle.addEventListener('click', (e) => {
-      getTask(e.target.dataset.id);
-    })
-  }
+const editMessage = () => { 
 } 
+
 
 export default firestoreFunc;
