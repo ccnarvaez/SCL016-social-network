@@ -1,4 +1,7 @@
+
+
 const addNote = () => {
+
   const addNoteTemplate = /* html */
     `
   <div id= "writingNote" class="container p-4">
@@ -13,8 +16,11 @@ const addNote = () => {
               </div>
               <button class= "btn btn-primary" id= "btn-task-form">send</button>
               <div class="form-group">
-              <div id="message-container">
+               <div class="container p-4">
                 <label> Publicaciones Destacadas</label>
+                </div>
+                <div id="message-container">
+             
               </div>
               </div>
                 </div>
@@ -26,6 +32,7 @@ const addNote = () => {
   </div>
 
 `
+
   return addNoteTemplate
 };
-export default addNote
+export default addNote;
