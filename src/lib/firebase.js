@@ -15,12 +15,12 @@ const firebaseAuth = {
         console.log("Registro exitoso.");
         console.log(user);
         registerForm.reset();
-
-      }).then(() => {
-
-        verification();
-
       })
+      // .then(() => {
+
+      //   verification();
+
+      // })
       .catch((error) => {
         // Bad login messages
         let errorCode = error.code;
@@ -111,18 +111,18 @@ const firebaseAuth = {
 
 }
 
-const verification = () => {
+// const verification = () => {
 
-  const user = firebase.auth().currentUser;
+//   const user = firebase.auth().currentUser;
 
-  user.sendEmailVerification().then(function () {
-    // Email sent.
-    console.log('enviando correo de verificación');
-  }).catch(function (error) {
-    // An error happened.
-    console.log(error);
-  });
-}
+//   user.sendEmailVerification().then(function () {
+//     // Email sent.
+//     console.log('enviando correo de verificación');
+//   }).catch(function (error) {
+//     // An error happened.
+//     console.log(error);
+//   });
+// }
 
 // const viewHome = (user) => {
 // let status = user.emailVerified

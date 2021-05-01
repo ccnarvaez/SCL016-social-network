@@ -28,7 +28,7 @@ if (btnLogin !== null) {
     let loginStatus = firebase.observer();
 
     if (loginStatus) {
-      history.replaceState(null, "Inicio", "/#/Inicio");
+      history.replaceState(null, 'Inicio', '/#/Inicio');
       router(window.location.hash);
       firestore();
     }
@@ -45,7 +45,7 @@ if (btnGoogle !== null) {
     let loginStatus = firebase.observer();
     console.log(4);
     if (loginStatus) {
-      history.replaceState(null, "Inicio", "/#/Inicio");
+      history.replaceState(null, 'Inicio', '/#/Inicio');
       router(window.location.hash);
       firestore();
 
