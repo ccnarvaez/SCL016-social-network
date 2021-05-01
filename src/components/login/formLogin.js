@@ -27,11 +27,16 @@ const functionForm = () => {
               </div>
               <button type="submit" id="btnLogin" class="btn btn-primary btn-block mb-3 mt-3">Ingresar</button>
             </div>
-            <small class="float-right mb-5"><a href="" data-toggle="modal"
-              data-target="#registerModal">Registrarse.</a>
-          </small>
-          </form>
 
+          </form>
+             <div class="container">
+                <small class="float-right mb-5"><a href="" data-toggle="modal" data-target="#registerModal">Registrarse.</a>
+                 </small>
+                 <br>
+               <small  class="float-right mb-5 text-danger" id = "error-section"></small>
+          </div>
+          
+      
         </div>
         <div class="col-2">
 

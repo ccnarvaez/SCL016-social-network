@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
-import router from './lib/router.js'
-import firebase from './lib/firebase.js'
-import firestore from './lib/firestore.js'
+import router from './lib/router.js';
+import firebase from './lib/firebase.js';
+import firestoreFunc from './lib/firestore.js';
 
 router(window.location.hash);
 window.addEventListener('hashchange', () => {
@@ -20,8 +20,8 @@ window.addEventListener('hashchange', () => {
 //Login
 const btnLogin = document.getElementById('btnLogin');
 if (btnLogin !== null) {
-  btnLogin.addEventListener('click', () => {
 
+  btnLogin.addEventListener('click', () => {
     let email = document.getElementById('txtEmail').value;
     let password = document.getElementById('txtPassword').value;
     firebase.login(email, password);
@@ -30,7 +30,7 @@ if (btnLogin !== null) {
     if (loginStatus) {
       history.replaceState(null, 'Inicio', '/#/Inicio');
       router(window.location.hash);
-      firestore();
+      firestoreFunc();  
     }
   });
 }
@@ -47,7 +47,7 @@ if (btnGoogle !== null) {
     if (loginStatus) {
       history.replaceState(null, 'Inicio', '/#/Inicio');
       router(window.location.hash);
-      firestore();
+      firestoreFunc();
 
     }
 

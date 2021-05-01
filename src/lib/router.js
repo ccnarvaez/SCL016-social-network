@@ -1,4 +1,4 @@
- import Home from '../views/home.js'
+import Home from '../views/home.js'
  import Login from '../views/login.js'
  import Courses from '../views/courses.js'
  import Services from '../views/services.js'
@@ -16,7 +16,7 @@
      } else {
          content.appendChild(navHome);
      }
-     switch (route) {
+switch (route) {
          case '#/': {
              return content.appendChild(Login());
          }
