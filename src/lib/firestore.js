@@ -58,12 +58,7 @@ const crudFunction= (doc) => {
     })
   }
 
-// S5. Edit data
-  // Modal 
-  // const modalEdit = edit();
-  // const modalContainer = document.getElementById('modal-container');
-  // modalContainer.innerHTML = modalEdit;
-
+  // S5. Edit data
   const btnEdit = document.querySelectorAll('.btn-info');
 
   for (let i = 0; i < btnEdit.length; i++) {
