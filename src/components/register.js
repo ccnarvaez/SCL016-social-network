@@ -6,9 +6,9 @@ const register = () => {
     console.log(password);
     
     // Creating event
-    const registerForm = document.getElementById('registerForm');
-    registerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+  const registerForm = document.getElementById('registerForm');
+  registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
     // This is to send data from app to firebase
     auth.createUserWithEmailAndPassword(email, password)
@@ -21,16 +21,14 @@ const register = () => {
       registerForm.reset();
     })
    
-  .catch((error) => {
-    // Bad login messages
-    let errorCode = error.code;
-    let errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage);
-
-   });
-    
-   });
+    .catch((error) => {
+      // Bad login messages
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+    });  
+  });
 
   return true 
 

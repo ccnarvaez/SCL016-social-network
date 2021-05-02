@@ -2,7 +2,6 @@ import footerIcons from '../components/footer.js';
 import addNotes from '../components/interactions/addNotes.js';
 
 const home = () => {
-
     const main = document.createElement('main');
     main.innerHTML = addNotes();
     let footer = footerIcons;
