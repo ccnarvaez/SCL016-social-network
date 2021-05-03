@@ -9,41 +9,42 @@ window.addEventListener('hashchange', () => {
 
 });
 
-//Register
-// const btnRegister = document.getElementById('btnRegister');
-// btnRegister.addEventListener('click', () => {
-//     let email = document.getElementById('txtEmailRegister').value;
-//     let password = document.getElementById('txtPasswordRegister').value;
-//     firebase.register(email, password);
-// });
+if (window.location.hash === '#/' || window.location.hash === '') {
+
+// Register
+const btnRegister = document.getElementById('btnRegister');
+btnRegister.addEventListener('click', () => {
+  let email = document.getElementById('txtEmailRegister').value;
+  let password = document.getElementById('txtPasswordRegister').value;
+  firebase.register(email, password);
+});
 
 //Login
 const btnLogin = document.getElementById('btnLogin');
+
 if (btnLogin !== null) {
 
   btnLogin.addEventListener('click', () => {
     let email = document.getElementById('txtEmail').value;
     let password = document.getElementById('txtPassword').value;
-    firebase.login(email, password);
-    let loginStatus = firebase.observer();
-
+    let user = firebase.login(email, password);
+    let loginStatus = firebase.observer(user);
+    console.log(loginStatus);
     if (loginStatus) {
-      history.replaceState(null, 'Inicio', '/#/Inicio');
+      history.replaceState(null, "Inicio", "/#/Inicio");
       router(window.location.hash);
-      firestoreFunc();  
+      firestoreFunc();
     }
   });
 }
 
 // login google
 const btnGoogle = document.getElementById('btn-google');
-if (btnGoogle !== null) {
+
   btnGoogle.addEventListener('click', () => {
-    console.log(2);
-    firebase.loginGoogle();
-    console.log(3);
-    let loginStatus = firebase.observer();
-    console.log(4);
+    let user = firebase.loginGoogle();
+    let loginStatus = firebase.observerGoogle();
+    console.log(loginStatus);
     if (loginStatus) {
       history.replaceState(null, 'Inicio', '/#/Inicio');
       router(window.location.hash);
@@ -52,16 +53,15 @@ if (btnGoogle !== null) {
     }
 
   });
-}
-//SignOut
 
-const btnSignOut = document.getElementById('Cerrar Sesión');
-if (btnSignOut !== null) {
+}else{
+  //SignOut
+  const btnSignOut = document.getElementById('Cerrar Sesión')
   btnSignOut.addEventListener('click', () => {
     firebase.signOut();
+    history.go(0);
     router(window.location.hash);
   });
 }
-
 
 firebase.observer();

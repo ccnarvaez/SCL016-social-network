@@ -9,25 +9,20 @@ const firebaseAuth = {
 
     // This is to send data from app to firebase
     auth.createUserWithEmailAndPassword(email, password)
-      .then(userCredential => {
-        // Sign in
-        let user = userCredential.user;
+      .then(() => {
+     
         console.log("Registro exitoso.");
-        console.log(user);
-        registerForm.reset();
+        const user = firebase.auth().currentUser;
+        const displayName = document.getElementById('txtDisplayName').value;
+        document.getElementById('btnCloseModal').click()
+        console.log(displayName);
+        user.updateProfile({
+          displayName: displayName
+        })
+ registerForm.reset();
       })
-      // .then(() => {
-
-<<<<<<< HEAD
-      //   verification();
-=======
-      }).then(() => {
-        verification();
->>>>>>> b47efe221b206bf6b27a2f4da38698c2f75172f2
-
-      // })
       .catch((error) => {
-        // Bad login messages
+
         let errorCode = error.code;
         let errorMessage = error.message;
         console.log(errorCode);
@@ -37,75 +32,90 @@ const firebaseAuth = {
   },
 
   login: (email, password) => {
-
-    const loginForm = document.getElementById('loginForm');
-
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-    });
-
     firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
+      .then(() => {
         // Signed in
-        // let user = userCredential.user;
-        console.log('Ingreso correcto');
-        loginForm.reset();
 
+        const user = firebase.auth().currentUser;
+        console.log(user.displayName);
+        console.log('Ingreso correcto');
+
+         localStorage.setItem('user', user); //guardo la loginstatus en localstorage
       })
       .catch((error) => {
         let errorCode = error.code;
         let errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
+        localStorage.setItem('user', '');
       });
-
-
+        let user = localStorage.getItem('user');
+        return user;
   },
-
   // Login google
   loginGoogle: () => {
+       // Start a sign in process for an unauthenticated user.
     const provider = new firebase.auth.GoogleAuthProvider()
-    firebase.auth().signInWithRedirect(provider).then((userCredential) => {
+    firebase.auth().signInWithRedirect(provider)
+    .then(() => {
         // Signed in
-        let user = firebase.auth().currentUser;
-
-        let name = user.displayName;       
-        console.log(name);
+        const user = firebase.auth().currentUser;
+        console.log(user.displayName);
         console.log('Ingreso correcto');
-        const divContainer = document.getElementById('divContainer')
-        divContainer.remove(); //quito el login
+
+        localStorage.setItem('user', user); //guardo la loginstatus en localstorage
+   
       })
-      .catch(console.log);
-
-
+       .catch((error) => {
+         let errorCode = error.code;
+         let errorMessage = error.message;
+         console.log(errorCode);
+         console.log(errorMessage);
+         localStorage.setItem('user', '');
+       });
+       let user = localStorage.getItem('user');
+       return user;
   },
 
-  observer: () => {
-    firebase.auth().onAuthStateChanged((user) => {
+  observer: (user) => {
+  
+    // firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // ...
         console.log('usuario logueado');
-        console.log(user.displayName);
-
         localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
 
       } else {
         console.log('no hay usuario activo');
         localStorage.setItem('loginStatus', false); //guardo la loginstatus en localstorage
-
       }
-    });
+    // });
     let loginStatus = localStorage.getItem('loginStatus');
+  
     return loginStatus;
   },
+
+   observerGoogle: () => {
+
+      firebase.auth().onAuthStateChanged((user) => {
+     if (user) {
+       console.log('usuario logueado');
+       localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
+
+     } else {
+       console.log('no hay usuario activo');
+       localStorage.setItem('loginStatus', false); //guardo la loginstatus en localstorage
+     }
+      });
+     let loginStatus = localStorage.getItem('loginStatus');
+
+     return loginStatus;
+   },
 
   signOut: () => { //si se presiona boton cerrarSesion se ejecuta esta funcion.
     firebase.auth().signOut()
       .then(() => {
-        ('cerrando la sesión...') //spinner
-
+        console.log('cerrando la sesión...'); //spinner
+        
       })
       .catch((error) => {
 
@@ -114,25 +124,5 @@ const firebaseAuth = {
   }
 
 }
-
-// const verification = () => {
-
-//   const user = firebase.auth().currentUser;
-
-//   user.sendEmailVerification().then(function () {
-//     // Email sent.
-//     console.log('enviando correo de verificación');
-//   }).catch(function (error) {
-//     // An error happened.
-//     console.log(error);
-//   });
-// }
-
-// const viewHome = (user) => {
-// let status = user.emailVerified
-
-// return status;
-
-// }
 
 export default firebaseAuth;

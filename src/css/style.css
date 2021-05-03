@@ -1,3 +1,8 @@
+body{
+  margin: 0%;
+  width: 100vw;
+  height: 100vh;
+}
 /*Bootstrap navigation bar*/
 .bg-dark-green {
   background-color: #082D2F;
@@ -25,19 +30,60 @@
 }
 
 /*Footer*/
-footer {
+/* footer {
   width: 100%;
   height: 100px;
   background-color: #E5E5E5;
   display: grid;
   float: left;
   grid-template-columns: repeat(3, 1fr);
-}
+
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    
+    width: 100%;
+    background: #000000;
+    text-align: center;
+    color: white;
+} */
+
 
 .footerMessage {
   font-size: 25px;
   display: flex;
   justify-content: center;
+}
+.footerLogin{
+  background-color: #E5E5E5;
+  width: 100vw;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 5px;
+  grid-template-areas:
+    "userProfile homePage chatShortCut";
+  grid-area: footer;
+   text-align: center;
+   left: 0px;
+   bottom: 0px;
+   background-color: #E5E5E5;
+   align-items: center;
+}
+
+.userProfile {
+  grid-area: userProfile;
+}
+
+.homePage {
+  grid-area: homePage;
+}
+
+.chatShortCut {
+  grid-area: chatShortCut;
 }
 
 /*Fontawesome icons*/
@@ -47,8 +93,6 @@ footer {
   content: "\f2c1";
   font-size: 40px;
   color: #082D2F;
-  display: flex;
-  justify-content: center;
 }
 
 .homePage::before {
@@ -57,8 +101,6 @@ footer {
   content: "\f015";
   font-size: 40px;
   color: #082D2F;
-  display: flex;
-  justify-content: center;
 }
 
 .chatShortCut::before {
@@ -67,8 +109,6 @@ footer {
   content: "\f27a";
   font-size: 40px;
   color: #082D2F;
-  display: flex;
-  justify-content: center;
 }
 
 

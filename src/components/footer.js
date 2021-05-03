@@ -6,7 +6,7 @@
      section1.className = 'userProfile';
      
      const section2 = document.createElement('div');
-     section2.className = 'homePage';    
+     section2.className = 'homePage';
      
      const section3 = document.createElement('div');
      section3.className = 'chatShortCut';

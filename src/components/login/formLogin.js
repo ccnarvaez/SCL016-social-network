@@ -1,7 +1,7 @@
 const functionForm = () => {
   const formLogin = /* html */
     `
-<div class="container" id="container">
+
       <div class="row">
         <div class="col-2">
         </div>
@@ -31,18 +31,17 @@ const functionForm = () => {
           </form>
              <div class="container">
                 <small class="float-right mb-5"><a href="" data-toggle="modal" data-target="#registerModal">Registrarse.</a>
-                 </small>
-                 <br>
-               <small  class="float-right mb-5 text-danger" id = "error-section"></small>
-          </div>
-          
-      
+              </small>
+                <br>
+                <small  class="float-right mb-5 text-danger" id="error-section"></small>
+                
+              </div>
+            
         </div>
         <div class="col-2">
 
         </div>
-      </div>
-
+        </div>
 `
   return formLogin
 };

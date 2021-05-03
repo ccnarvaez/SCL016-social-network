@@ -1,7 +1,7 @@
      // Footer messages
 const footerFunction = () => {
      const footer = document.createElement('footer');
-     footer.className = 'footer';
+     footer.className = 'footerLogin';
 
      const section1 = document.createElement('div');
      footer.appendChild(section1);
