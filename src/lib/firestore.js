@@ -1,4 +1,3 @@
-//import edit from './edit.js'
 
 const cleanAndCall = () =>{
   // C1. Got input where user will write data, and then it get empty
@@ -80,8 +79,6 @@ const firestoreFunc = () => {
     createPublication();
     taskForm.reset();
   });
-
-  // Default cleaning
   cleanAndCall();
 }
  
