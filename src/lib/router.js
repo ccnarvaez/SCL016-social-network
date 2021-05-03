@@ -19,6 +19,7 @@ const router = (route) => {
     switch (route) {
         case '#/': {
             return content.appendChild(Login());
+
         }
         case '': {
             return content.appendChild(Login());
@@ -38,4 +39,4 @@ const router = (route) => {
     }
 }
 
- export default router;
+export default router;

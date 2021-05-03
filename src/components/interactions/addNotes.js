@@ -1,7 +1,7 @@
 const addNote = () => {
-  
-  const addNoteTemplate = /* html */
-    `
+
+    const addNoteTemplate = /* html */
+      `
   <div id= "writingNote" class="container p-4">
     <div class="row">
       <div class="col-md-4 offset-md-d-4">
@@ -17,7 +17,7 @@ const addNote = () => {
               <div class="container p-4">
                 <label> Publicaciones Destacadas</label>
               </div>
-              <!-- This is varible module, here messages appear-->
+<!-- This is varible module, here messages appear-->
               <div id="message-container">
               </div>
               <div id="modal-container">
