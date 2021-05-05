@@ -7,7 +7,7 @@ const login = () => {
     const form = functionForm();
      const modal = modalFunction();
     const main = document.createElement('main');
-    main.innerHTML = form + modal; // añadir modal luego
+    main.innerHTML = form + modal; 
     main.className = 'container-fluid'
     let divLogin = document.createElement('div');
     divLogin.id = 'divContainer';

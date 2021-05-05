@@ -56,6 +56,8 @@ for (let i = 0; i < btnDelete.length; i++) {
   })
 }
 
+
+
 // S5. Edit data
 const btnEdit = document.querySelectorAll('.btn-info');
 
@@ -64,6 +66,7 @@ for (let i = 0; i < btnEdit.length; i++) {
   btnSingle.addEventListener('click', (e) => {
     const taskForm = document.getElementById('task-form');
     taskForm["task-title"].value = db.collection('publication').doc((e.target.dataset.id)).delete();
+
   })
 }
 }
@@ -81,3 +84,4 @@ const firestoreFunc = () => {
 }
 
 export default firestoreFunc;
+

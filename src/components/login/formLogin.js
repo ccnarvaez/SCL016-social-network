@@ -36,6 +36,9 @@ const functionForm = () => {
                 <small  class="float-right mb-5 text-danger" id="error-section"></small>
                 
               </div>
+          <!--firebase messages-->
+          <div id = "firebase-messageSU">
+          </div>
             
         </div>
         <div class="col-2">

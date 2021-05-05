@@ -40,9 +40,9 @@ divList.appendChild(ul)
 // 2. menu
 const arrayLi = ['Inicio', 'Cursos', 'Servicios', 'Puntos Limpios', 'Cerrar Sesión'];
 
-arrayLi.forEach(item => { // recorrer array, item representa a cada item del array
+arrayLi.forEach(item => { 
   const li = document.createElement('li');
-  li.className = 'nav-item' //??? active, revisar como dejar dinamico
+  li.className = 'nav-item' 
   li.id = item;
   const anchorLi = document.createElement('a'); //create anchor for li
   anchorLi.className = 'nav-link';
