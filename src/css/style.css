@@ -1,0 +1,137 @@
+body{
+  margin: 0%;
+  width: 100vw;
+  height: 100vh;
+}
+/*Bootstrap navigation bar*/
+.bg-dark-green {
+  background-color: #082D2F;
+}
+
+.btn-primary {
+  background-color: #389DA3 !important;
+  border-color: #389DA3 !important;
+}
+
+.img-login {
+  width: 11rem;
+}
+
+.img-logo-login {
+  width: 150px;
+  height: 150px;
+}
+
+.barMenu {
+  display: none;
+  height: 300px;
+  background-color: #082D2F;
+  color: lightblue;
+}
+
+/*Footer*/
+/* footer {
+  width: 100%;
+  height: 100px;
+  background-color: #E5E5E5;
+  display: grid;
+  float: left;
+  grid-template-columns: repeat(3, 1fr);
+
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    
+    width: 100%;
+    background: #000000;
+    text-align: center;
+    color: white;
+} */
+
+
+.footerMessage {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+.footerLogin{
+  background-color: #E5E5E5;
+  width: 100vw;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 5px;
+  grid-template-areas:
+    "userProfile homePage chatShortCut";
+  grid-area: footer;
+   text-align: center;
+   left: 0px;
+   bottom: 0px;
+   background-color: #E5E5E5;
+   align-items: center;
+}
+
+.userProfile {
+  grid-area: userProfile;
+}
+
+.homePage {
+  grid-area: homePage;
+}
+
+.chatShortCut {
+  grid-area: chatShortCut;
+}
+
+/*Fontawesome icons*/
+.userProfile::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f2c1";
+  font-size: 40px;
+  color: #082D2F;
+}
+
+.homePage::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f015";
+  font-size: 40px;
+  color: #082D2F;
+}
+
+.chatShortCut::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f27a";
+  font-size: 40px;
+  color: #082D2F;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+  .userProfile::before {
+    font-size: 20px;
+  }
+
+  .homePage::before {
+    font-size: 20px;
+  }
+
+  .chatShortCut::before {
+    font-size: 20px;
+  }
+
+  footer {
+    height: 50px;
+  }
+
+  .footerMessage {
+    font-size: 14px;
+  }
+
+}
