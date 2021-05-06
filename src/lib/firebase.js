@@ -26,21 +26,25 @@ const firebaseAuth = {
         user.updateProfile({
         displayName: displayName
         })
-        //console.log(user);
+        console.log(user);
         registerForm.reset();
       })
       .catch((error) => {
+       
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
         // Error message
-        //  let errorCode = error.code;
-        //  let errorMessage = error.message;
-        //  console.log(errorCode);
-        //  console.log(errorMessage);
-        const reference = document.getElementById('firebase-messages');
-        const signupEl = document.createElement('div');
-        const signupMsj = reference.appendChild(signupEl);
-        signupMsj .className = 'alert alert-danger';
-        signupMsj .textContent = error;
+        //setTimeout(() => {
+          const reference = document.getElementById('firebase-messages');
+          const signupEl = document.createElement('div');
+          const signupMsj = reference.appendChild(signupEl);
+          signupMsj .className = 'alert alert-danger';
+          signupMsj .textContent = error;
+         //}, 1500);
       });
+       
   },
 
   login: (email, password) => {
@@ -69,15 +73,15 @@ const firebaseAuth = {
     .then(() => {
         // Signed in
         const user = firebase.auth().currentUser;
-        // console.log(user.displayName);
-        // console.log('Ingreso correcto');
+        console.log(user.displayName);
+        console.log('Ingreso correcto');
         localStorage.setItem('user', user); //guardo la loginstatus en localstorage
       })
        .catch((error) => {
-        //  let errorCode = error.code;
-        //  let errorMessage = error.message;
-        //  console.log(errorCode);
-        //  console.log(errorMessage);
+         let errorCode = error.code;
+         let errorMessage = error.message;
+         console.log(errorCode);
+         console.log(errorMessage);
         localStorage.setItem('user', '');
        });
     let user = localStorage.getItem('user');
@@ -87,26 +91,26 @@ const firebaseAuth = {
   signOut: () => { 
   firebase.auth().signOut()
     .then(() => {
-      //console.log('cerrando la sesión...'); //spinner 
+      console.log('cerrando la sesión...'); //spinner 
     })
     .catch((error) => {
 
-      //console.log(error);
+      console.log(error);
     })
   },
 
   observer: (user) => {
   
-    // firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        //console.log('usuario logueado');
+        console.log('usuario logueado');
         localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
 
       } else {
-        //console.log('no hay usuario activo');
+        console.log('no hay usuario activo');
         localStorage.setItem('loginStatus', false); //guardo la loginstatus en localstorage
       }
-    // });
+   });
     let loginStatus = localStorage.getItem('loginStatus');
   
     return loginStatus;
@@ -114,16 +118,16 @@ const firebaseAuth = {
 
   observerGoogle: () => {
 
-    firebase.auth().onAuthStateChanged((user) => {
+    //firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        // console.log('usuario logueado');
+        console.log('usuario logueado');
         localStorage.setItem('loginStatus', true); //guardo la loginstatus en localstorage
 
       } else {
-        // console.log('no hay usuario activo');
+        console.log('no hay usuario activo');
         localStorage.setItem('loginStatus', false); //guardo la loginstatus en localstorage
       }
-        });
+    // });
       let loginStatus = localStorage.getItem('loginStatus');
 
       return loginStatus;
