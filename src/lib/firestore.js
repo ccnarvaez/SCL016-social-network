@@ -4,36 +4,64 @@ const cleanAndCall = () => {
   addMsj.innerHTML = '';
 
   // C2. Getting firebase data updated
-  db.collection('publication').get().then((snapshot) => {
+ db.collection('publication').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
       crudFunction(doc);
     })
   });
 }
 
+// //let snapshot = db.collection('publications').get();\
+// shapshot.docs.forEach(
+// ....
+// )
+// let snapshot = await db.collection('publications').get();
+
 const createPublication = () => {
   // Sending data to firebase
   const taskForm = document.getElementById('task-form');
   const title = taskForm["task-title"].value;
+  
   db.collection('publication').doc().set({
-    title
+    title,
+    likes : 0
+  })
+  .then( () => {
+    cleanAndCall();
   });
-  cleanAndCall();
 }
 
-const deleteMessage = (idDel) => {
+const deleteMessage = (id) => {
 
   // D1. Firebase method, delete: we want to take off some comments
-  const deleteFirestore = id => db.collection('publication').doc(id).delete();
-  deleteFirestore(idDel);
-  cleanAndCall();
+    db.collection('publication').doc(id).delete()
+    .then(() => {
+      cleanAndCall();
+   }); 
+}
+
+const likeMessage = (id) => {
+  db.collection('publication').doc(id).get().then(snapshot => {
+    let countLikes = snapshot.data().likes;
+    console.log(countLikes);
+    countLikes ++;
+    db.collection('publication').doc(id).update({
+      likes: countLikes 
+    }). then(() =>{
+      cleanAndCall();
+    })
+  })
 }
 
 const crudFunction = (doc) => {
     // S1. Select firebase response
     const data = doc.data();
+    console.log(doc);
+    console.log(doc.data());
     // S2. Got id to identify data to get actions edit and delete
     data.id = doc.id;
+    console.log(data.id);
+    // data.likes = doc.likes;
     //console.log(data);
     // S3. Here html template to add in home view, comments. 
     const addMsj = document.getElementById('message-container');
@@ -44,8 +72,23 @@ const crudFunction = (doc) => {
             Editar 
           </button>
           <button type= "button" class= "btn btn-success btn-sm" data-id="${data.id}">Eliminar</button>
+          <button  type= "button" class= "btn btn-danger btn-sm" data-id="${data.id}">Like</button>
+          <span >${data?.likes} <span>
         </div>
       </div>`;
+
+ 
+// Likes
+let likesBtn = document.querySelectorAll('.btn-danger');
+console.log(likesBtn);
+
+
+for (let j= 0 ; j< likesBtn.length ; j++){
+let likeBtnSin = likesBtn[j];
+ likeBtnSin.addEventListener('click', (e) => {
+    likeMessage(e.target.dataset.id);
+  })
+}
 // S4. Delete data
 const btnDelete = document.querySelectorAll('.btn-success');
 
@@ -55,8 +98,6 @@ for (let i = 0; i < btnDelete.length; i++) {
     deleteMessage(e.target.dataset.id);
   })
 }
-
-
 
 // S5. Edit data
 const btnEdit = document.querySelectorAll('.btn-info');

@@ -3,7 +3,7 @@ const functionForm = () => {
     `
 
       <div class="row">
-        <div class="col-2">
+        <div class="col-2"></div>
         </div>
         <div class="col-8">
           <form class="mt-5" id="loginForm">
@@ -45,7 +45,7 @@ const functionForm = () => {
 
         </div>
         </div>
-`
-  return formLogin
+`;
+  return formLogin;
 };
-export default functionForm
+export default functionForm;
