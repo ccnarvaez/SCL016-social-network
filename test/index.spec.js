@@ -1,6 +1,6 @@
 // importamos la funcion que vamos a testear
 import login from '../src/views/login';
-import register from './components/register.js'
+import register from './components/register.js';
 
 describe('login', () => {
   it('debería ser una función', () => {

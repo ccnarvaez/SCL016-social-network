@@ -30,7 +30,7 @@ const addNote = () => {
         </div>
       </div>
     </div>
-  `
-  return addNoteTemplate
+  `;
+  return addNoteTemplate;
 };
 export default addNote;

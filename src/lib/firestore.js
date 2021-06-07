@@ -11,7 +11,6 @@ const cleanAndCall = () => {
   });
 }
 
-
 // //let snapshot = db.collection('publications').get();\
 // shapshot.docs.forEach(
 // ....
@@ -44,6 +43,7 @@ const deleteMessage = (id) => {
 const likeMessage = (id) => {
   db.collection('publication').doc(id).get().then(snapshot => {
     let countLikes = snapshot.data().likes;
+    console.log(countLikes);
     countLikes ++;
     db.collection('publication').doc(id).update({
       likes: countLikes 
@@ -60,6 +60,7 @@ const crudFunction = (doc) => {
     console.log(doc.data());
     // S2. Got id to identify data to get actions edit and delete
     data.id = doc.id;
+    console.log(data.id);
     // data.likes = doc.likes;
     //console.log(data);
     // S3. Here html template to add in home view, comments. 

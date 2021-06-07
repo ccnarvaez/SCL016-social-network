@@ -1,5 +1,5 @@
-const modalFunction = () =>{
-const modalRegister =  /* html */
+const modalFunction = () => {
+  const modalRegister = /* html */
 ` 
   <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -37,8 +37,8 @@ const modalRegister =  /* html */
     </div>    
   </div>
     </div>
-  </div>`
-  return modalRegister
-}
+  </div>`;
+  return modalRegister;
+};
 
-export default modalFunction
+export default modalFunction;

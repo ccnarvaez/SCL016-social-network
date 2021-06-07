@@ -4,7 +4,7 @@
 
 * [1. Selección del tema](#1-selección-de-tema)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
+* [3. UX](#3-UX)
 * [4. Consideraciones generales](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 * [6. Hacker edition](#6-hacker-edition)
@@ -14,24 +14,21 @@
 ## 1. Selección del tema
 
 La selección de la temática de la red social surge de una tormenta de ideas, en la que, como equipo, cada una planteo las ideas que podían ser un punto de partida para la red social.
+Los temas que nos resultaron mas llamativos fueron sometidos a una encuesta para evaluar cual de ellos llamaría más la atención de las personas, de este proceso, la temática más votada fue una red social de reciclaje, para unir toda la información asociada a puntos de recolección (puntos limpios), información general sobre técnicas de reciclaje, conexión con otras personas para impulsar iniciativas.
 
 ## 2. Resumen del proyecto
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), de la
-[Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
+Hoy en día como sociedad, hemos empezado a desarrollar una consciencia más estructurada respecto al impacto que las actividades humanas han ejercido sobre el medio ambiente.
+Años atrás el tema de reciclaje no era tomado tan en cuenta, pero en la medida que enfrentamos las consecuencias de ciertas acciones desmedidas, nos hemos visto en la obligación de pensar en el impacto de nuestras actividades sobre el entorno.
+Algo que llamó nuestra atención, y que nos hizo considerar este tema para el desarrollo de una app, es que en general no encontramos una aplicación de reciclaje que cubriera las funcionalidades de una red social, y pensamos que dado el auge y la necesidad de implementación de un estilo de vida más consciente, el generar esta herramienta, podría ser un buen aporte, y facilitaría el impulso de las acciones ecologistas en forma efectiva.
 
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
-acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
+## 3. UX
 
-## 3. Objetivos de aprendizaje
+### 3.1 Historias de usuario
+### 3.2 Usuarios tipo
 
-El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](../../topics/css/02-responsive) (con más de una vista / página)
-en la que podamos **leer y escribir datos.**
+### 3.3 Desarrollo y prototipado
+### 3.4 Testeo y feedback
 
 ### HTML y CSS
 
