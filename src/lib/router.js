@@ -1,14 +1,12 @@
-import Home from '../views/home.js';
-import Login from '../views/login.js';
-import Courses from '../views/courses.js';
-import Services from '../views/services.js';
-import navLogin from '../components/login/navLogin.js';
-import navHome from '../components/navbar.js';
+import {Home, Login, Courses, Services} from '../views.js';
+import {navBar, navBarLogin} from '../navbar.js';
 
 // SUMMARY: This module binds hash reference to the view related to the anchor text clicked on navigation bar or to signup and login processes
 
 // Calling reference in HTML document
 const content = document.getElementById('root');
+const navHome = navBar();
+const navLogin = navBarLogin();
 
 const router = (route) => {
   // Navigation bar login
