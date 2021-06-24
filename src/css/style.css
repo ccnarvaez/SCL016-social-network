@@ -1,8 +1,9 @@
-body{
+body {
   margin: 0%;
   width: 100vw;
   height: 100vh;
 }
+
 /*Bootstrap navigation bar*/
 .bg-dark-green {
   background-color: #082D2F;
@@ -27,6 +28,12 @@ body{
   height: 300px;
   background-color: #082D2F;
   color: lightblue;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: center;
+
 }
 
 /*Footer*/
@@ -54,7 +61,8 @@ body{
   display: flex;
   justify-content: center;
 }
-.footerLogin{
+
+.footerLogin {
   background-color: #E5E5E5;
   width: 100vw;
 }
@@ -67,11 +75,11 @@ body{
   grid-template-areas:
     "userProfile homePage chatShortCut";
   grid-area: footer;
-   text-align: center;
-   left: 0px;
-   bottom: 0px;
-   background-color: #E5E5E5;
-   align-items: center;
+  text-align: center;
+  left: 0px;
+  bottom: 0px;
+  background-color: #E5E5E5;
+  align-items: center;
 }
 
 .userProfile {
